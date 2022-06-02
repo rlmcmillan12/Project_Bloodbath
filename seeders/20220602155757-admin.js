@@ -15,7 +15,7 @@ module.exports = {
     await queryInterface.bulkInsert('Admins', [
       {
         username: 'rmcmillan',
-        password: 'password0',
+        password: '$2b$10$ddZk.OpRYV4xWZ521UMEf.5n4TapwmauDgwegLH99fD6tdDQRRihq',
         createdAt: randPastDate(),
         updatedAt: randPastDate()
       },

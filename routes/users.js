@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
 });
 
 
-router.get('/register', function(req, res, next) {
+router.get('/register', function (req, res, next) {
   res.render('admin-register')
 });
 
@@ -25,29 +25,29 @@ router.post('/register', (req, res) => {
   models.Admin.findOne({
     where: { username: username }
   })
-  .then(admin => {
-    // username/email already taken
-    if (admin) {
-      res.send('Username already taken')
-      return
-    }
-    // hash password
-    bcrypt.hash(password, 10)
-      .then(hash => {
-        // send information to database
-        models.Admin.create({
-          username,
-          password: hash
-        })
-          .then(admin => {
-            // send user to correct place w/ message
-            res.redirect('/users/login')
+    .then(admin => {
+      // username/email already taken
+      if (admin) {
+        res.send('Username already taken')
+        return
+      }
+      // hash password
+      bcrypt.hash(password, 10)
+        .then(hash => {
+          // send information to database
+          models.Admin.create({
+            username,
+            password: hash
           })
-      })
-  })
+            .then(admin => {
+              // send user to correct place w/ message
+              res.redirect('/users/login')
+            })
+        })
+    })
 })
 
-router.get('/login', function(req, res){
+router.get('/login', function (req, res) {
   res.render('admin-login')
 })
 
@@ -55,6 +55,7 @@ router.get('/login', function(req, res){
 router.post('/login', async (req, res) => {
   // get details from req.body
   const { username, password } = req.body
+  // console.log(await bcrypt.hash(password, 10))
   if (!username || !password) {
     res.send('all fields required')
     return
@@ -63,6 +64,7 @@ router.post('/login', async (req, res) => {
   const admin = await models.Admin.findOne({
     where: { username: username }
   })
+  console.log(admin)
   // is there a user
   if (!admin) {
     res.send('username not found')
@@ -80,7 +82,7 @@ router.post('/login', async (req, res) => {
   // redirect to home
   res.redirect('/dashboard')
 })
-router.get('/logout', function(req, res){
+router.get('/logout', function (req, res) {
   req.session.admin = null
   res.redirect('/users/login')
 })

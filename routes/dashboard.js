@@ -1,7 +1,8 @@
 const router = require('express').Router()
 const models = require('../models')
 
-router.get('/', async function(req, res){
+router.get('/', async function (req, res) {
+    const admin = await models.Admin.findByPk(req.session.admin.id)
     const donations = await models.Donation.findAll({
         order: [
             ['createdAt', 'DESC']
@@ -13,9 +14,10 @@ router.get('/', async function(req, res){
     console.log(donations)
     res.render('dashboard', {
         locals: {
-            donations: donations
+            donations: donations,
+            admin: admin
         }
-    }) 
+    })
 })
 
 module.exports = router

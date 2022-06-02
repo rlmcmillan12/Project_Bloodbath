@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 </head>
+
 <body>
     <h1>${admin.username}'s Dashboard</h1>
     <table>
@@ -17,19 +19,20 @@
             </tr>
         </thead>
         <tbody>
-            ${donations.map(x => { 
-                return `
-                <tr>
-                    <th>${x.DonorId}</th>
-                    <th>${x.bloodType}</th> 
-                    <th>${x.Id}</th>
-                </tr>
-                `
+            ${donations.map(x => {
+            return `
+            <tr>
+                <th>${x.DonorId}</th>
+                <th>${x.Donor.bloodType}</th>
+                <th>${x.id}</th>
+            </tr>
+            `
             }).join('') }
-            <a href="/donor/search"><button>Donor Page</button></a> <!-- change href depending on routes -->
-            <a href="/dashboard/register"><button>Admin Sign Up</button></a> <!-- change href depending on routes -->
+            <a href="/donor/"><button>Donor Page</button></a>
+            <a href="/dashboard/register"><button>Admin Sign Up</button></a>
 
         </tbody>
     </table>
 </body>
+
 </html>
