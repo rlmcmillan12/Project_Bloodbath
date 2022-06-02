@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Form</title>
+</head>
+<body>
+    <h1>New Donor Form</h1>
+    <form action="/donor/donor-form" method="post"> <!-- check action-->
+        <p>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+            <label for="dob">DOB</label>
+            <input type="date" id="dob" name="dob" required>
+        </p>
+        <p>
+            <label for="bloodtype">Blood Type</label>
+            <select name="bloodtype" id="bloodtype" required>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+        </p>
+        <button type="submit">Submit</button>
+    </form> 
+</body>
+</html>
