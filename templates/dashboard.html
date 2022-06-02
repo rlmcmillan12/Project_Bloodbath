@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
-    <h1>Dashboard</h1>
+    <h1>${admin.username}'s Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Donor ID</th>
+                <th>Donor Blood Type</th>
+                <th>Donation ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${donations.map(x => { 
+                return `
+                <tr>
+                    <th>${x.DonorId}</th>
+                    <th>${x.bloodType}</th> 
+                    <th>${x.Id}</th>
+                </tr>
+                `
+            }).join('') }
+            <a href="/donor/search"><button>Donor Page</button></a> <!-- change href depending on routes -->
+            <a href="/dashboard/register"><button>Admin Sign Up</button></a> <!-- change href depending on routes -->
 
-    <!-- <a href="/users/register">New user</a> -->
+        </tbody>
+    </table>
 </body>
-</html> 
+</html>

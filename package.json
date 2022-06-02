@@ -8,6 +8,7 @@
     "reset": "npx sequelize-cli db:drop; npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
   "dependencies": {
+    "@ngneat/falso": "^5.4.1",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "connect-session-sequelize": "^7.1.4",
