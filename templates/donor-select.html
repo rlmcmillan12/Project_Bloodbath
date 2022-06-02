@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Page</title>
+</head>
+<body>
+    <h1>Donor Select</h1>
+    <form action="" method="post"> <!--fill in action-->
+        <p>
+            <label for="dob">DOB</label>
+            <input type="date" name="dob" id="dob">
+        </p>
+        <button type="submit">Search</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>DOB</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            ${Donors.map(x => {
+                return `
+                <tr>
+                    <td>${x.name}</td>
+                    <td>${x.dob}</td>
+                    <td><a href="/donation/${x.id}">New Donation</a></td>
+                </tr>
+                `                
+            }).join('') }
+        </tbody>
+    </table>
+    <a href="/donor/form"><button type="submit">New Donor</button></a><!-- Href may change -->
+</body>
+</html>
