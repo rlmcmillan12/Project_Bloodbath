@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Donor Select</h1>
-    <form action="" method="post"> <!--fill in action-->
+    <form action="/donor/donor_select" method="post"> <!--fill in action-->
         <p>
             <label for="dob">DOB</label>
             <input type="date" name="dob" id="dob">
@@ -24,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            ${Donors.map(x => {
+            ${donors.map(x => {
                 return `
                 <tr>
                     <td>${x.name}</td>
