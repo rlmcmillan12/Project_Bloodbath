@@ -8,33 +8,37 @@
 </head>
 <body>
     <h1>Donor Select</h1>
-    <form action="/donor/donor_select" method="post"> <!--fill in action-->
+    <form action="/donor_select" method="get"> <!--fill in action-->
         <p>
             <label for="dob">DOB</label>
-            <input type="date" name="dob" id="dob">
+            <input type="date" name="dob" id="dob" value="${dob}">
         </p>
         <button type="submit">Search</button>
     </form>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>DOB</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            ${donors.map(x => {
-                return `
+    ${donors.length === 0? `
+        No results
+    ` : `
+        <table>
+            <thead>
                 <tr>
-                    <td>${x.name}</td>
-                    <td>${x.dob}</td>
-                    <td><a href="/donation/${x.id}">New Donation</a></td>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th></th>
                 </tr>
-                `                
-            }).join('') }
-        </tbody>
-    </table>
-    <a href="/donor/form"><button type="submit">New Donor</button></a><!-- Href may change -->
+            </thead>
+            <tbody>
+                ${donors.map(x => {
+                    return `
+                    <tr>
+                        <td>${x.name}</td>
+                        <td>${x.dob.getMonth() + 1}/${x.dob.getDate()}/${x.dob.getFullYear()}</td>
+                        <td><a href="/donor/${x.id}/donation">New Donation</a></td>
+                    </tr>
+                    `                
+                }).join('') }
+            </tbody>
+        </table>
+        `}
+    <a href="/donor"><button type="submit">New Donor</button></a><!-- Href may change -->
 </body>
 </html>

@@ -18,6 +18,8 @@ const usersRouter = require('./routes/users');
 const donorRouter = require('./routes/donor')
 
 const donorSelect = require('./routes/donor-select')
+
+const donationRouter = require('./routes/donation')
 //for authorization 
 const checkAuth = require('./middleware/checkAuth');
 
@@ -54,9 +56,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //line 52 down is the routes
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/users',usersRouter);
 app.use('/donor', donorRouter)
 app.use('/dashboard', checkAuth, dashboardRouter)
 app.use('/donor_select', checkAuth, donorSelect)
-
+app.use('/donor/${x.id}/donation',donationRouter)
 module.exports = app;

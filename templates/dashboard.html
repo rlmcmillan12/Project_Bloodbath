@@ -13,22 +13,22 @@
     <table>
         <thead>
             <tr>
-                <th>Donor ID</th>
-                <th>Donor Blood Type</th>
-                <th>Donation ID</th>
+                <th>Donor Name</th>
+                <th>Donor DOB</th>
+                <th>Bloodtype</th>
             </tr>
         </thead>
         <tbody>
             ${donations.map(x => {
             return `
             <tr>
-                <th>${x.DonorId}</th>
-                <th>${x.Donor.bloodType}</th>
-                <th>${x.id}</th>
+                <th>${x.Donor.name || ''}</th>
+                <th>${x.Donor.dob.getMonth() + 1}/${x.Donor.dob.getDate()}/${x.Donor.dob.getFullYear()}</th>
+                <th>${x.Donor?.bloodType || ''}</th>
             </tr>
             `
             }).join('') }
-            <a href="/donor/"><button>Donor Page</button></a>
+            <a href="/donor_select"><button>Donor Page</button></a>
             <a href="/dashboard/register"><button>Admin Sign Up</button></a>
 
         </tbody>

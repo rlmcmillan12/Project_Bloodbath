@@ -18,13 +18,13 @@ router.get('/', (req, res) => {
     // find donor from session
     const admin = await models.Admin.findByPk(req.session.admin.id)
     // create form for donor
-    const donation = await admin.createDonation({
+    const donor = await models.Donor.create({
       name: name,
       dob: dob,
       bloodType: bloodType
     })
     // redirect back to dashboard
-    res.redirect('/donor-select')
+    res.redirect('/donor_select')
   })
   
   module.exports = router
