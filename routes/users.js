@@ -51,6 +51,11 @@ router.get('/logout', function (req, res) {
   res.redirect('/users/login')
 })
 
+router.get('/register', function (req, res, next) {
+  res.render('admin-register')
+});
+
+
 
 
 
