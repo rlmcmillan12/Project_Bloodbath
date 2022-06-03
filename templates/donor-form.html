@@ -8,18 +8,18 @@
 </head>
 <body>
     <h1>New Donor Form</h1>
-    <form action="/donor/donor-form" method="post"> <!-- check action-->
+    <form action="/donor" method="post"> <!-- check action-->
         <p>
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name">
         </p>
         <p>
             <label for="dob">DOB</label>
-            <input type="date" id="dob" name="dob" required>
+            <input type="date" id="dob" name="dob">
         </p>
         <p>
-            <label for="bloodtype">Blood Type</label>
-            <select name="bloodtype" id="bloodtype" required>
+            <label for="bloodType">Blood Type</label>
+            <select name="bloodType" id="bloodType">
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
                 <option value="B+">B+</option>
@@ -30,7 +30,7 @@
                 <option value="O-">O-</option>
             </select>
         </p>
-        <button type="submit">Submit</button>
+        <a href="/donation"><button type="submit">Submit</button></a>
     </form> 
 </body>
 </html>
