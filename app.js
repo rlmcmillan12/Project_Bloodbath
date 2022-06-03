@@ -60,5 +60,5 @@ app.use('/users',usersRouter);
 app.use('/donor', donorRouter)
 app.use('/dashboard', checkAuth, dashboardRouter)
 app.use('/donor_select', checkAuth, donorSelect)
-app.use('/donor/${x.id}/donation',donationRouter)
+app.use('/donor/:id/donation', donationRouter)
 module.exports = app;
