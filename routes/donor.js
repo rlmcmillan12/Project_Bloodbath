@@ -1,11 +1,17 @@
 const router = require('express').Router()
 const models = require('../models')
+const partials = {
+  head: 'partials/head',
+  foot: 'partials/foot'
+}
 
 //donor search
 //donor form 
 
 router.get('/', (req, res) => {
-    res.render('donor-form')
+    res.render('donor-form',{
+      partials
+    })
   })
   
   router.post('/', async (req, res) => {

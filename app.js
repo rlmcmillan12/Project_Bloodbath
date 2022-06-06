@@ -31,6 +31,11 @@ app.engine('html', es6Renderer)
 app.set('views', 'templates')
 app.set('view engine', 'html')
 
+const partials = {
+  head: 'partials/head',
+  foot: 'partials/foot'
+}
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -52,7 +57,6 @@ app.use(
   );
   store.sync()
 app.use(express.static(path.join(__dirname, 'public')));
-
 //line 52 down is the routes
 
 app.use('/', indexRouter);

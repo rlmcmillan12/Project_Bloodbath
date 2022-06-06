@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Register</title>
-</head>
-<body>
+${head}
+
+<form class="row g-3 admin-reg mt-5">
+  <div class="col-md-2">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username">
+  </div>
+  <div class="col-md-2">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="passwor4">
+    
+    <div class="col-12 pt-3">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </div>
+</form>
+
+
+${foot}
+
+
+
+
+
+
+<!-- 
+
+
   <h1>Register</h1>
   <form action="/users/register" method="post">
     <p>
@@ -18,7 +37,4 @@
       <input type="password" id="password" name="password">
     </p>
     <button type="submit">Register</button>
-  </form>
-  <a href="/users/register"></a> <!-- check to see if href path needs to be changed-->
-</body>
-</html>
+  </form> -->

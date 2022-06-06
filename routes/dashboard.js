@@ -1,5 +1,9 @@
 const router = require('express').Router()
 const models = require('../models')
+const partials = {
+  head: 'partials/head',
+  foot: 'partials/foot'
+}
 
 router.get('/', async function (req, res) {
     const admin = await models.Admin.findByPk(req.session.admin.id)
@@ -7,12 +11,13 @@ router.get('/', async function (req, res) {
         order: [
             ['createdAt', 'DESC']
         ],
-        limit: 6,
+        limit: 12,
         include: models.Donor
 
     })
     console.log(donations)
     res.render('dashboard', {
+        partials,
         locals: {
             donations: donations,
             admin: admin
@@ -21,7 +26,9 @@ router.get('/', async function (req, res) {
 })
 
 router.get('/register', function (req, res, next) {
-    res.render('admin-register')
+    res.render('admin-register', {
+      partials
+    })
   });
   
   router.post('/register', (req, res) => {
@@ -49,12 +56,13 @@ router.get('/register', function (req, res, next) {
               username,
               password: hash
             })
+            
               .then(admin => {
                 // send user to correct place w/ message
                 res.redirect('/users/login')
               })
+            })
           })
-      })
   })
 
 module.exports = router
