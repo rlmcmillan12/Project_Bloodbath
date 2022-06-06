@@ -15,7 +15,7 @@ router.get('/', async function (req, res) {
         include: models.Donor
 
     })
-    console.log(donations)
+    // console.log(donations)
     res.render('dashboard', {
         partials,
         locals: {

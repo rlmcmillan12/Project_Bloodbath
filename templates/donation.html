@@ -2,7 +2,8 @@ ${head}
   <h1>Make a Donation for ${donor.name} </h1>
 
   <form action="/donor/${donor.id}/donation" method="post">
-    
+    <label for="units">How many units?</label>
+    <input type="number" name="units" class="units" id="units" min="1">
     
     <button type="submit">Add To Database</button>
   </form>
