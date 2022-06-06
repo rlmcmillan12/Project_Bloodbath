@@ -5,10 +5,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const es6Renderer = require('express-es6-template-engine')
 
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const models = require('./models')
 const store = new SequelizeStore({ db: models.sequelize })
 
+//routes
 const indexRouter = require('./routes/index');
 
 const dashboardRouter = require('./routes/dashboard')
