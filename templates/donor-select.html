@@ -1,17 +1,21 @@
 ${head}
-    <div class="donor-select-list">
+    <!-- <div class="donor-select-list"> -->
     <h1>Donor Select List</h1>
-    <form action="/donor_select" method="get"> <!--fill in action-->
-        <p>
-            <label for="dob">DOB</label>
-            <input type="date" name="dob" id="dob" value="${dob}">
-            <button type="submit" >Search</button>
-        </p>
+    <form action="/donor_select" class="row g-3 donor-select-list" method="get"> 
+        <div class="col-md-3">
+            <label for="dob" class="form-label">DOB</label>
+            <input type="date" name="dob" id="dob" class="form-control" value="${dob}">
+            <div class="col-12 pt-4">
+            <button type="submit" class="btn btn-primary" >Search</button>
+            </div>
+        <!-- </div> -->
     </form>
+    <br>
+    <br>
     ${donors.length === 0? `
     
     ` : `
-        <table class="table">
+        <table class="table table-hover dashboard-table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -33,4 +37,7 @@ ${head}
         </table>
         `}
     </div> 
-${foot}
+    
+    
+
+    ${foot}
