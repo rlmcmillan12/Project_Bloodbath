@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-</head>
-
-<body>
+${head}
     <h1>${admin.username}'s Dashboard</h1>
-    <table>
+    <h3 class="recent-donors">Most Recent Donations</h3>
+    <br>
+    <br>
+    <table class="table table-hover dashboard-table ">
         <thead>
             <tr>
                 <th>Donor Name</th>
@@ -28,11 +21,8 @@
             </tr>
             `
             }).join('') }
-            <a href="/donor_select"><button>Donor Page</button></a>
-            <a href="/dashboard/register"><button>Admin Sign Up</button></a>
+          
 
         </tbody>
     </table>
-</body>
-
-</html>
+${foot}

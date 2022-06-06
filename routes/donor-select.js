@@ -1,7 +1,10 @@
 const router = require('express').Router()
 const { Op } = require('sequelize')
 const models = require('../models')
-
+const partials = {
+    head: 'partials/head',
+    foot: 'partials/foot'
+  }
 
 router.get('/', async function(req, res){
     if(req.query.dob){
@@ -20,6 +23,7 @@ router.get('/', async function(req, res){
             }}
         })
         res.render('donor-select', {
+            partials,
             locals: {
                 donors: donors,
                 dob: req.query.dob
@@ -28,6 +32,7 @@ router.get('/', async function(req, res){
     }
     else{
         res.render('donor-select', {
+            partials,
             locals: {
                 donors: [],
                 dob: ''
