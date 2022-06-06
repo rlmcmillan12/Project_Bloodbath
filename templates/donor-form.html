@@ -2,19 +2,19 @@ ${head}
 <h1>New Donor Form</h1>
 <br>
 
-<form class="row g-3 donor-form">
+<form action="/donor" method="post" class="row g-3 donor-form">
     <div class="col-md-3">
       <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name">
+      <input type="text" name="name" class="form-control" id="name">
     </div>
     <div class="col-md-3">
       <label for="dob" class="form-label">DOB</label>
-      <input type="date" class="form-control" id="dob">
+      <input type="date" name="dob" class="form-control" id="dob">
     </div>
     
     <div class="col-md-3">
       <label for="inputState" class="form-label">Blood Type</label>
-      <select id="inputState" class="form-select">
+      <select id="inputState" name="bloodType" class="form-select">
         <option selected>Choose Bloodtype</option>
         <option value="A+">A+</option>
         <option value="A-">A-</option>
