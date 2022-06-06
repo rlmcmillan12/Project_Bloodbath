@@ -1,10 +1,24 @@
 ${head}
-  <h1>Make a Donation for ${donor.name} </h1>
+<br>
+<br>
+<h1>Make a Donation for ${donor.name} </h1>
+<br>
+<form action="/donor/${donor.id}/donation" method="post" class="donation-units ">
+  <div class="form-outline col-md-4">
+    <label class="form-label" for="typeNumber">How many units?</label>
+    <input type="number" id="typeNumber" class="form-control" />
+    <br>
+    <button type="submit" class="btn btn-secondary">Add To Database</button>
+  </div>
+  </form>
+  ${foot}
+
+
+<!-- 
+
 
   <form action="/donor/${donor.id}/donation" method="post">
     <label for="units">How many units?</label>
     <input type="number" name="units" class="units" id="units" min="1">
     
-    <button type="submit">Add To Database</button>
-  </form>
-${foot}
+  </form> -->
