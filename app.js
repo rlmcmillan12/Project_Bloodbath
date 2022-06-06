@@ -61,7 +61,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users',usersRouter);
-app.use('/donor', donorRouter)
+app.use('/donor', checkAuth, donorRouter)
 app.use('/dashboard', checkAuth, dashboardRouter)
 app.use('/donor_select', checkAuth, donorSelect)
 app.use('/donor/:id/donation', donationRouter)

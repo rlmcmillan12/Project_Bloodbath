@@ -1,17 +1,17 @@
-
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: linear-gradient(90deg, #ddd6f3 0%, #a003039a 100%);
+  background: linear-gradient(90deg, #ac6a58cb 0%, #a003039a 100%);
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
 
-a {
-  color: #00B7FF;
-}
 h1{
-  color: blue;
+  color: whitesmoke;
   display: flex;
   justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: beige;
 }
 .recent-donors{
   display: flex;
@@ -20,7 +20,8 @@ h1{
 
 
 .dashboard-table{
-border-color: black;
+border-color: beige;
+color: beige;
 }
 
 .donor-form, .admin-reg, .donor-select-list{
@@ -30,5 +31,23 @@ border-color: black;
 }
 .navbar{
   font-size: 20px;
-  background-color: #AAABB8;;
+  background-color: rgba(220, 204, 204, 0.72);
+  border-radius: 20px;
+}
+.btn{
+  background-color: brown;
+  color: cornsilk;
+  border: none;
+  
+}
+.table-hover{
+  /* background-color: azure; */
+}
+h3{
+  display: flex;
+  justify-content: center;
+}
+.sign-in{
+  display: flex;
+  justify-content: center;
 }
