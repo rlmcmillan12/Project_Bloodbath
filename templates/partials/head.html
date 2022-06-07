@@ -52,7 +52,7 @@
               <a class="nav-link" href="/dashboard/register">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/users/logout">Logout</a>
+              <a class="nav-link log-out-alert" href="/users/logout">Logout</a>
             </li>
             <a href="/"><img class="nav-logo" src="/img/logoColor.png" alt="a drop of Blood"></a>
           </ul>
@@ -61,3 +61,9 @@
     </nav>
   </div>
     <div class="container-fluid mt-3"></div>
+    <script>
+      const button = document.querySelector('.log-out-alert')
+      button.addEventListener('click', function () {
+          alert('Thanks! You are now logged out, redirecting to home page.')
+      })
+  </script>
