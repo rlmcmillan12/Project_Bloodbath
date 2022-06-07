@@ -80,8 +80,14 @@ a {
   border-radius: 20px;
 }
 
-a:hover {
+.nav-link:hover {
   background-color: rgba(255, 255, 255, 0.434);
+}
+.nav-logo-imgB:hover{
+  background-color: red;
+}
+.nav-logo-imgB{
+  border-radius: 150%;
 }
 
 
