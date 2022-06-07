@@ -1,19 +1,23 @@
 ${head}
-<h1>Welcome to BloodBath Blood Bank!!</h1>
-<h3>Click the link to sign in</h3>
 <br>
-<div class="col-12 pt-3 sign-in">
- <a href="/users/login">   <button type="submit" class="btn btn-secondary test">Admin Login</button></a>
+<h1>Welcome to Blood Bath</h1>
+<br>
+
+<div class="dashboardIconFlex">
+    <img class="nav-logo welcomeIcon" src="/img/welcome.png" alt="a drop of Blood">
 </div>
- <img src="/img/logo.png" alt="a drop of Blood">
- <img src="https://giphy.com/gifs/showtime-dexter-dexter10-3o7TKtSh815BEo0jXG" alt="">
- 
- 
- <script>
- const button = document.querySelector('.test')
- button.addEventListener('click', function(){
-   alert ('Button Pressed! Now you can login..')
- })
- </script>
+<h3 class="signInToAccess">- sign in to access dashboard -</h3>
+<div class="col-12 pt-3 sign-in">
+    <a href="/users/login"><button type="submit" class="btn btn-secondary test bigButton">Admin Login</button></a>
+</div>
+<!-- <img src="/img/logo.png" alt="a drop of Blood"> -->
+<img src="https://giphy.com/gifs/showtime-dexter-dexter10-3o7TKtSh815BEo0jXG" alt="">
+
+<script>
+    const button = document.querySelector('.test')
+    button.addEventListener('click', function () {
+        alert('Button Pressed! Now you can login..')
+    })
+</script>
 
 ${foot}
