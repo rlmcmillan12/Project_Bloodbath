@@ -17,12 +17,13 @@ ${head}
     ${donors.length === 0? `
     
     ` : `
+    <div class="tableFlex">
         <table class="table table-hover dashboard-table">
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>DOB</th>
-                    <th></th>
+                    <th class="donorDobCenter">DOB</th>
+                    <th class="bloodTypeEnd">Donate</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,14 +31,15 @@ ${head}
                     return `
                     <tr>
                         <td>${x.name}</td>
-                        <td>${x.dob.getMonth() + 1}/${x.dob.getDate()}/${x.dob.getFullYear()}</td>
-                        <td><a href="/donor/${x.id}/donation">New Donation</a></td>
+                        <td class="donorDobCenter">${x.dob.getMonth() + 1}/${x.dob.getDate()}/${x.dob.getFullYear()}</td>
+                        <td class="bloodTypeEnd"><a href="/donor/${x.id}/donation">New Donation</a></td>
                     </tr>
                     `                
                 }).join('') }
             </tbody>
         </table>
         `}
+    </div>
     
     
 

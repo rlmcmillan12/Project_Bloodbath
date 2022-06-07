@@ -72,6 +72,9 @@ h3 {
 .nav-logo {
   width: 40px;
 }
+.nav-logo:hover {
+  background-color: none;
+}
 
 a {
   border-radius: 20px;
@@ -136,6 +139,10 @@ a:hover {
 .tableFlex {
   display: flex;
   justify-content: center;
+}
+
+.donorDobCenter {
+  text-align: center;
 }
 
 .bloodTypeEnd {
