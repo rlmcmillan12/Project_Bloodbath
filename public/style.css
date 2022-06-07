@@ -140,6 +140,9 @@ a:hover {
   display: flex;
   justify-content: center;
 }
+#donorNameStart {
+  width: 33%;
+}
 
 .donorDobCenter {
   text-align: center;

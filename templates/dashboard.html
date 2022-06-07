@@ -3,31 +3,32 @@ ${head}
 <h1>${admin.username}'s Dashboard</h1>
 <br>
 
-    <div class="dashboardIconFlex">
-        <img class="nav-logo selectListIcon" src="/img/dashboard.png" alt="a drop of Blood">
-    </div>
-    <br>
-    <h3 class="recent-donors">MOST RECENT DONATIONS</h3>
-    <div class="tableFlex">
-        <table class="table table-hover dashboard-table ">
-            <thead>
-                <tr>
-                    <th>Donor Name</th>
-                    <th class="donorDobCenter">Donor DOB</th>
-                    <th class="bloodTypeEnd">Blood Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                ${donations.map(x => {
-                    return `
-                    <tr>
-                        <th class="tableDataText">${x.Donor.name || ''}</th>
-                        <th class="donorDobCenter tableDataText">${x.Donor.dob.getMonth() + 1}/${x.Donor.dob.getDate()}/${x.Donor.dob.getFullYear()}</th>
-                        <th class="bloodTypeEnd tableDataText">${x.Donor?.bloodType || ''}</th>
-                    </tr>
-                    `
-                }).join('') }
-            </tbody>
-        </table>
-    </div>
+<div class="dashboardIconFlex">
+    <img class="nav-logo selectListIcon" src="/img/dashboard.png" alt="a drop of Blood">
+</div>
+<br>
+<h3 class="recent-donors">MOST RECENT DONATIONS</h3>
+<div class="tableFlex">
+    <table class="table table-hover dashboard-table ">
+        <thead>
+            <tr>
+                <th id="donorNameStart" class="donorNameStart">Donor Name</th>
+                <th class="donorDobCenter">Donor DOB</th>
+                <th class="bloodTypeEnd">Blood Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${donations.map(x => {
+            return `
+            <tr>
+                <th class="tableDataText">${x.Donor.name || ''}</th>
+                <th class="donorDobCenter tableDataText">${x.Donor.dob.getMonth() +
+                    1}/${x.Donor.dob.getDate()}/${x.Donor.dob.getFullYear()}</th>
+                <th class="bloodTypeEnd tableDataText">${x.Donor?.bloodType || ''}</th>
+            </tr>
+            `
+            }).join('') }
+        </tbody>
+    </table>
+</div>
 ${foot}
