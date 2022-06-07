@@ -1,13 +1,17 @@
 ${head}
 <br>
+<h1>Register New Admin</h1>
 <br>
-<h1>Register new admin</h1>
-<form action="/users/register" method="post" class="row g-3 admin-reg mt-5">
-  <div class="col-md-2">
+
+<div class="dashboardIconFlex">
+  <img class="nav-logo selectListIcon" src="/img/medical.png" alt="a drop of Blood">
+</div>
+<form action="/users/register" method="post" class="row g-3 admin-reg mt-0">
+  <div class="col-md-2 inputBarWidth">
     <label for="username" class="form-label">Username</label>
     <input type="text" name="username" class="form-control" id="username">
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 inputBarWidth">
     <label for="password" class="form-label">Password</label>
 
     <!-- id for input on line 12 under password was passwor4 changed to password so if something breaks looks here -->
